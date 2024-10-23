@@ -1,0 +1,111 @@
+a {
+    text-decoration: none;
+}
+
+.form-check-input:checked {
+    background-color: transparent;
+    border-color: #666;
+}
+
+.plot-loading-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.plot-loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #000000 #000000 transparent transparent;
+    -webkit-animation: rotation 1s linear infinite;
+            animation: rotation 1s linear infinite;
+}
+.plot-loader:after, .plot-loader:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #FF3D00 #FF3D00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-animation: rotationBack 0.5s linear infinite;
+            animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+.plot-loader:before {
+    width: 32px;
+    height: 32px;
+    border-color: #000000 #000000 transparent transparent;
+    -webkit-animation: rotation 1.5s linear infinite;
+            animation: rotation 1.5s linear infinite;
+}
+
+.plot-selectpicker {
+  /* background-color: #1b1b29; */
+  /* border: none !important; */
+  color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color) !important;
+    border-radius: var(--bs-border-radius);
+    height: 38px;
+}
+
+.bootstrap-select .dropdown-toggle.plot-selectpicker:focus {
+  outline: 0 !important;
+}
+
+.plot-selectpicker:after {
+  display: none !important;
+}
+
+.show-winner-confirmation {
+  cursor: pointer;
+}
+
+@-webkit-keyframes plotRotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+@keyframes plotRotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes plotRotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+}
+@keyframes plotRotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+}

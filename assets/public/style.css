@@ -1,0 +1,258 @@
+.plot-ball-wrap {
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 5px;
+    display: inline-block;
+}
+.plot-ball-wrap .plot-ball-balls {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background: #00193C;
+    position: relative;
+    overflow: hidden;
+}
+.plot-ball-wrap .plot-ball-balls *:before, .plot-ball-wrap .plot-ball-balls *:after, .plot-ball-wrap .plot-ball-balls .plot-ball-light, .plot-ball-wrap .plot-ball-balls .plot-ball-dark, .plot-ball-wrap .plot-ball-balls .plot-ball-sm {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-sm {
+    width: 20px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    transform: rotate(320deg);
+    top: 15%;
+    left: 15%;
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-digital {
+    width: 50px;
+    position: relative;
+    margin: -10px 5px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 0;
+    text-align: center;
+    left: 0;
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-digital li {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #fff;
+    margin: 15px 0;
+    display: block;
+    padding: 7px;
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-digital li span {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    font-size: 30px;
+    display: block;
+    font-weight: 800;
+    line-height: 50px;
+    margin: 0px;
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-light {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-light:before {
+    top: 0;
+    right: -10px;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 100% 0px, rgba(132, 254, 254, 0.6), rgba(132, 254, 254, 0) 58%);
+    filter: blur(5px);
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-light:after {
+    top: 3px;
+    left: 3px;
+    width: 90%;
+    height: 90%;
+    background-image: linear-gradient(-180deg, rgba(44, 254, 219, 0.6) 10%, rgba(44, 254, 219, 0) 50%);
+    transform: rotate(320deg);
+    filter: blur(2px);
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-dark {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-dark:before {
+    bottom: 2px;
+    left: 2px;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(circle at 100% 0px, rgba(252, 22, 136, 0.6), rgba(252, 22, 136, 0) 60%);
+    filter: blur(3px);
+    transform: rotate(150deg);
+}
+.plot-ball-wrap .plot-ball-balls .plot-ball-dark:after {
+    bottom: -10px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 100% 0px, #fd58e7, rgba(253, 88, 231, 0) 50%);
+    filter: blur(5px);
+    transform: rotate(90deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --bg-color: #180148;
+  --primary-bg-color: #333740;
+  --primary-color: #2c62f6;
+  --text-color: #b1b8ca;
+  --text-active: #ffffff;
+  --button-hover-bg-color: #2b2e34;
+  --border-color: #494d59;
+  --dropdown-height: 0;
+  --rotate-arrow: 0;
+  --translate-value: 0;
+  --list-opacity: 0;
+  --transition-time: 0.4s;
+  --transition-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --border-radius: 1.4rem;
+  --list-button-height: 4.6rem;
+}
+
+
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+}
+
+svg {
+  height: 1.6rem;
+  width: 1.6rem;
+}
+
+.text-truncate {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dropdown-arrow {
+  display: inline-flex;
+}
+
+.dropdown-title {
+  margin: 0 auto 0 0;
+  text-transform: capitalize;
+}
+
+.dropdown-button {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.8rem;
+}
+
+.dropdown-button svg {
+  transition: all var(--transition-time) var(--transition-timing);
+  fill: var(--text-color);
+}
+
+.dropdown-button svg,
+.dropdown-button span {
+  pointer-events: none;
+}
+
+.dropdown-button:hover,
+.dropdown-button:focus {
+  color: var(--text-active);
+}
+
+.dropdown-button:hover svg,
+.dropdown-button:focus svg {
+  fill: var(--text-active);
+}
+
+.main-button {
+  height: 4rem;
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  background-color: var(--primary-bg-color);
+  border: 0.1rem solid var(--border-color);
+  transition: all var(--transition-time) var(--transition-timing);
+}
+
+.main-button:focus {
+  border: 0.1rem solid var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(44, 98, 246, 0.4);
+}
+
+.main-button .dropdown-arrow {
+  transition: transform var(--transition-time) var(--transition-timing);
+  transform: rotate(var(--rotate-arrow));
+  margin-left: 1.8rem;
+}
+
+.list-button {
+  height: var(--list-button-height);
+  transition: color var(--transition-time) var(--transition-timing);
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.dropdown-list-container {
+  overflow: hidden;
+  max-height: var(--dropdown-height);
+  transition: max-height var(--transition-time) var(--transition-timing);
+}
+
+.dropdown-list-wrapper {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--primary-bg-color);
+  border-radius: var(--border-radius);
+  border: 0.1rem solid var(--border-color);
+  position: relative;
+}
+
+ul.dropdown-list {
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+}
+
+li.dropdown-list-item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  opacity: var(--list-opacity);
+  transition: opacity 0.8s var(--transition-timing);
+}
